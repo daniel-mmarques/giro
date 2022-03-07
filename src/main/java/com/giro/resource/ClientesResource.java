@@ -1,4 +1,4 @@
-package com.gito.resource;
+package com.giro.resource;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
