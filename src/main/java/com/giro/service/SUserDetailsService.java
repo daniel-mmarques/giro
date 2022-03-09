@@ -23,10 +23,10 @@ public class SUserDetailsService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String nifNipc) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         try {
 
-            var user = userRepository.findByEmailAndAtivo(nifNipc, Boolean.TRUE);
+            var user = userRepository.findByEmailAndAtivo(email, Boolean.TRUE);
 
             if (user.isEmpty()) {
                 return null;
