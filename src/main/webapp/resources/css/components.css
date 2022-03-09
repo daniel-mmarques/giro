@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+.ui-column-title {
+	font-family: Montserrat;
+	color: #1D3352;
+}
+
+body .ui-widget {
+	font-family: Montserrat;
+	font-size: 1em;
+}
+
+body .ui-card .ui-card-title {
+	font-family: Montserrat;
+	font-size: 1.2rem;
+	color: #1D3352;
+}
+
+body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-title {
+	font-family: Montserrat;
+	color: #1D3352;
+}
+
+.ui-panel-title {
+	font-family: Montserrat;
+	color: #1D3352;
+}
+
+.ui-panel.no-padding .ui-panel-content {
+	padding: 0 !important;
+}
+
+.ui-card.remove-padding .ui-card-content {
+	padding: 0 !important;
+}
+
+.ui-card.inp-read-only .ui-inputfield {
+	margin-top: 9px;
+	background: #F7F8F9;
+	font-family: Montserrat;
+	font-size: 0.9em;
+}
+
+.ui-panelgrid .ui-panelgrid-cell .ui-inputfield {
+	color: #1D3352;
+}
+
+.ui-inputfield.ui-inputtext {
+	color: #1D3352 !important;
+	margin-top: 10px;
+}
+
+.ui-panelgrid.inp-read-only .ui-panelgrid-cell .ui-inputfield {
+	margin-top: 9px;
+	background: #F7F8F9;
+	font-family: Montserrat;
+	font-size: 0.9em;
+}
+
+.ui-dialog.loading .ui-dialog-content {
+	padding-bottom: 18px !important;
+}
+
+/* RETIRANDO O EFEITO SHADOW DOS INPUTS DOS FORMLARIOS */
+body .ui-inputfield.ui-state-focus:not(.ui-state-error) {
+	box-shadow: none !important;
+}
+
+.ui-panelgrid.inp-form-declaracao-atividade .ui-panelgrid-cell .ui-inputfield {
+	margin-top: 9px;
+}
+
+body .no-padding .ui-card-body {
+	padding: 0;
+}
+
+body .no-padding .ui-card-body .ui-card-content {
+	padding: 0;
+}
+
+.ui-datepicker-trigger.ui-button {
+	background: #06679C;
+}
+
+.ui-button.ui-button-icon-only {
+	background: #06679C;
+}
+
+.ui-button.ui-button-text-only {
+	background: #06679C;
+}
+
+.ui-button.ui-button-text-only.ui-button-secondary {
+	background: #DBE9F6;
+	color: #06679C;
+	font-weight: 500;
+	border: 1px solid #DBE9F6 !important;
+}
+
+.ui-button.ui-button-outlined {
+	background: #DBE9F6 !important;
+	color: #06679C !important;
+	font-weight: 400 !important;
+	border: 1px solid #DBE9F6 !important;
+}
+
+.ui-fileupload-buttonbar .ui-button.ui-fileupload-choose {
+	background: #06679C;
+	font-weight: 500;
+}
+
+.ui-button.ui-fileupload-upload {
+	background: #06679C;
+	font-weight: 500;
+}
+
+.ui-tabs .ui-state-active {
+	border-color: #06679C !important;
+}
+
+.ui-tabs .ui-state-active a {
+	color: #06679C !important;
+}
+
+.ui-tabs .ui-tabs-header a {
+	font-size: 0.90em;
+}
+
+.ui-chkbox .ui-chkbox-box.ui-state-active {
+	border-color: #06679C !important;
+	background: #06679C !important;
+	color: #ffffff !important;
+}
+
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today a {
+	color: #06679C !important;
+	background: transparent !important;
+}
+
+.ui-today-button {
+	border-color: #06679C !important;
+	background: #06679C !important;
+}
+
+.ui-outputlabel {
+	color: #1D3352 !important;
+}
+
+.ui-selectoneradio {
+	color: #1D3352 !important;
+}
+
+.ui-datatable-tablewrapper .ui-datatable-data .ui-widget-content td {
+	color: #1D3352 !important;
+}
+
+.ui-accordion .ui-accordion-header {
+	color: #1D3352 !important;
+}
+
+.ui-selectonemenu label.ui-selectonemenu-label {
+	margin-top: 0px !important;
+}
+
+.ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+	color: #1D3352;
+	font-family: Montserrat;
+}
+
+.ui-dialog.ui-confirm-dialog .ui-dialog-content>span {
+	color: #1D3352;
+}
+
+.ui-confirmdialog-yes {
+	background: #06679C !important;
+	font-family: Montserrat;
+}
+
+.ui-confirmdialog-no.ui-confirmdialog-no.ui-button-flat {
+	border: none !important;
+	background: #DBE9F6 !important;
+	color: #06679C !important;
+	font-family: Montserrat;
+}
+
+.ui-chkbox .ui-chkbox-label {
+	color: #1D3352;
+	font-weight: 500 !important;
+	font-family: Montserrat;
+}
+
+.ui-selectmanycheckbox  .ui-selectmanycheckbox-label  {
+    border-color: #06679C !important;
+    color: #1D3352 !important;
+	background: #06679C !important;
+	font-family: Montserrat; 
+}

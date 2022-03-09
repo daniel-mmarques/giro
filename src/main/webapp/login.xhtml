@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <f:facet name="first">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </f:facet>
+    <title>IMPIC - Instituto dos Mercados Públicos do Imobiliário e da Construção</title>
+    <link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/images/favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+    <h:outputStylesheet library="css" name="geral.css"/>
+    <h:outputStylesheet library="css" name="components.css"/>
+    <h:outputStylesheet>
+
+        .box {
+            width:100%;
+            height:100%;
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            background: #FFFFFF;
+            -webkit-box-shadow: 1px 1px 1px rgba(50, 50, 50, 0.77);
+            -moz-box-shadow:    1px 1px 1px rgba(50, 50, 50, 0.77);
+            box-shadow:         1px 1px 1px rgba(50, 50, 50, 0.77);
+        }
+
+        .ui-panelgrid .ui-grid-responsive .ui-panelgrid-cell {
+            border: 0 none;
+            background: #F7F8F9;
+        }
+
+    </h:outputStylesheet>
+</h:head>
+
+<h:body>
+    <h:form prependId="false">
+
+  >
+
+        <div class="container-login" style="margin-top: 8em">
+            <p:card style="background: #F7F8F9">
+                <div class="box-login">
+                    <f:facet name="title">
+                        <div class="impic-header-title-separation-login">
+                            <p:outputLabel value="Logi" styleClass="impic-tit-sublinhado"/>
+                            <p:outputLabel value="n"/>
+                        </div>
+                    </f:facet>
+
+                    <p:outputLabel value="Autenticação no Portal do IMPIC, I.P.:"
+                                   style="margin-left: 20px; width: auto"/>
+                    <br/><br/>
+                    <p:outputLabel value="Falha no login!"
+                                   style="color: red !important; margin-left: 20px;"
+                                   rendered="${!empty param['error']}"/>
+
+                    <div class="ui-fluid" style="margin-left: 20px">
+                        <div class="p-field" style="margin-top: 20px">
+                            <label for="username" style="color: #06679C;">*NIF/NIPC</label><br/>
+                            <p:inputText rendered="true" id="username"/>
+                        </div>
+                        <div class="p-field" style="margin-top: 30px">
+                            <label for="password" style="color: #06679C;">*Palavra-Chave</label><br/>
+                            <p:password required="true" id="password" style="margin-top: 10px;"/>
+                        </div>
+                        <div style="margin-top: 30px">
+                            <p:commandButton value="Entrar" ajax="false"
+                                             onclick="PF('statusDialog').show();"
+                                             style="height: 40px; width: 100px; margin-bottom: 10px;"/>
+                        </div>
+
+
+                        <p:panelGrid id="pg-cadastrar"
+                                     columns="1"
+                                     layout="grid"
+                                     columnClasses="ui-g-12 ui-md-12 ui-lg-12">
+                            <p:row>
+                                <p:column>
+                                    <label style="color: #06679C;">Não tem conta?</label>
+                                    <p:link style="margin-left: 5px" href="#{request.contextPath}/utilizador.xhtml">Registar</p:link>
+                                </p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </div>
+                </div>
+            </p:card>
+        </div>
+    </h:form>
+
+    <p:dialog widgetVar="statusDialog"
+              modal="true"
+              styleClass="loading"
+              draggable="false"
+              closable="false"
+              resizable="false"
+              showHeader="false">
+        <div>
+            <h:graphicImage style="margin-top: 20px !important;"
+                            width="40"
+                            height="40"
+                            library="images"
+                            name="loading.gif"/>
+        </div>
+    </p:dialog>
+
+</h:body>
+</html>

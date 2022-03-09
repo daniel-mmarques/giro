@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <f:facet name="first">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </f:facet>
+    <title>IMPIC - Instituto dos Mercados Públicos do Imobiliário e da Construção</title>
+    <link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/images/receita.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+    <h:outputStylesheet library="css" name="geral.css"/>
+    <h:outputStylesheet library="css" name="components.css"/>
+    <h:outputStylesheet>
+
+        .container-newuser {
+            width: auto;
+            height: 90vh;
+            min-height: 90vh;
+            background: #fff;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-newuser {
+            width: auto;
+            height: auto;
+            background: #F7F8F9;
+        }
+
+        .ui-panelgrid .ui-grid-responsive .ui-panelgrid-cell {
+            border: 0 none;
+            background: #F7F8F9;
+        }
+
+
+    </h:outputStylesheet>
+</h:head>
+
+<h:body>
+    <h:form prependId="false" id="frm-new-user">
+        <p:growl id="growl" showDetail="true" skipDetailIfEqualsSummary="true"/>
+        <f:metadata>
+            <f:viewParam name="param" value="#{createNewUserView.param}"/>
+            <f:viewAction action="#{createNewUserView.onLoad}"/>
+        </f:metadata>
+        <div>
+            <div class="card ui-fluid">
+
+                <div class="container-newuser">
+                    <p:card style="background: #F7F8F9; height: auto; width: auto; margin-top: 10px">
+                        <div class="box-newuser">
+                            <f:facet name="title">
+                                <div class="impic-header-title-separation-login">
+                                    <p:outputLabel value="Regi" styleClass="impic-tit-sublinhado"/>
+                                    <p:outputLabel value="sto"/>
+                                </div>
+                            </f:facet>
+
+                            <p:panelGrid columns="2"
+                                         id="pg-new-user"
+                                         style="margin-right: 20px"
+                                         layout="grid"
+                                         columnClasses="ui-g-12 ui-md-12 ui-lg-6, ui-g-12 ui-md-12 ui-lg-6">
+                                <p:row>
+                                    <p:column styleClass="ui-g-12 ui-md-12 ui-lg-12">
+                                        <h:panelGroup id="pg-nome">
+                                            <p:outputLabel value="Nome" for="nome"/><br/>
+                                            <p:inputText required="true"
+                                                         requiredMessage="Campo é obrigatório"
+                                                         id="nome"
+                                                         style="text-transform: uppercase"
+                                                         converter="toUpperCaseConverter"
+                                                         value="#{createNewUserView.utilizadorEntity.nome}">
+                                                <p:ajax update="pg-nome"/>
+                                            </p:inputText><br/>
+                                            <p:message for="nome" display="text" styleClass="impic-message-form-input"
+                                                       rendered="#{ not empty facesContext.getMessageList('nome')}"/>
+                                        </h:panelGroup>
+                                    </p:column>
+                                </p:row>
+
+                                <p:row>
+                                    <p:column styleClass="ui-g-12 ui-md-12 ui-lg-12">
+                                        <h:panelGroup id="pg-email">
+                                            <p:outputLabel value="Email" for="email"/><br/>
+                                            <p:inputText
+                                                    id="email"
+                                                    required="true"
+                                                    maxlength="70"
+                                                    converter="toLowerCaseConverter"
+                                                    style="text-transform: lowercase"
+                                                    requiredMessage="Campo é obrigatório"
+                                                    value="#{createNewUserView.utilizadorEntity.email}">
+                                                <p:ajax update="pg-email"/>
+                                                <p:keyFilter mask="email" preventPaste="false"/>
+                                            </p:inputText>
+                                            <p:message for="email" display="text"
+                                                       styleClass="impic-message-form-input"
+                                                       rendered="#{ not empty facesContext.getMessageList('email')}"/>
+                                        </h:panelGroup>
+                                    </p:column>
+                                </p:row>
+
+                                <p:row rendered="#{createNewUserView.renderPassword}">
+                                    <p:column styleClass="ui-g-12 ui-md-12 ui-lg-12">
+                                        <p:outputLabel
+                                                value="Pelo menos uma letra maiúscula, uma letra minúscula, um número e no mínimo de oito de comprimento."/>
+                                    </p:column>
+                                </p:row>
+
+                                <p:column styleClass="ui-g-12 ui-md-6 ui-lg-6"
+                                          rendered="#{createNewUserView.renderPassword}">
+                                    <h:panelGroup id="pg-password">
+                                        <p:outputLabel value="Palavra-Chave" for="palavra-chave"/><br/>
+                                        <p:password id="palavra-chave"
+                                                    required="true"
+                                                    feedback="true"
+                                                    promptLabel="Digite sua palavra-chave"
+                                                    weakLabel="Fraca"
+                                                    goodLabel="Boa"
+                                                    strongLabel="Forte"
+                                                    validatorMessage="Não atende as regras de segurança da palavra-chave"
+                                                    match="palavra-chave-confirm"
+                                                    value="#{createNewUserView.utilizadorEntity.password}"
+                                                    style="margin-top: 10px; float: left"
+                                                    requiredMessage="Campo é obrigatório">
+                                            <f:validateRegex pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"/>
+                                        </p:password><br/>
+                                        <p:message for="palavra-chave"
+                                                   display="text"
+                                                   styleClass="impic-message-form-input"
+                                                   rendered="#{ not empty facesContext.getMessageList('palavra-chave')}"/>
+                                    </h:panelGroup>
+                                </p:column>
+
+                                <p:column styleClass="ui-g-12 ui-md-6 ui-lg-6"
+                                          rendered="#{createNewUserView.renderPassword}">
+                                    <h:panelGroup id="pg-password-confirm">
+                                        <p:outputLabel value="Repetição da Palavra-Chave"
+                                                       for="palavra-chave-confirm"/><br/>
+                                        <p:password id="palavra-chave-confirm"
+                                                    required="true"
+                                                    feedback="true"
+                                                    validatorMessage="Não atende as regras de segurança da palavra-chave"
+                                                    promptLabel="Repita sua palavra-chave"
+                                                    weakLabel="Fraca"
+                                                    goodLabel="Boa"
+                                                    strongLabel="Forte"
+                                                    style="margin-top: 10px; float: left"
+                                                    value="#{createNewUserView.passwordConfirm}"
+                                                    requiredMessage="Campo é obrigatório">
+                                            <f:validateRegex pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"/>
+                                        </p:password><br/>
+                                        <p:message for="palavra-chave"
+                                                   display="text"
+                                                   styleClass="impic-message-form-input"
+                                                   rendered="#{ not empty facesContext.getMessageList('palavra-chave')}"/>
+                                    </h:panelGroup>
+                                </p:column>
+
+                                <f:facet name="footer">
+                                        <p:commandButton
+                                                process="@this, nome, email,
+                                                         palavra-chave, palavra-chave-confirm"
+                                                update="pg-new-user"
+                                                action="#{createNewUserView.save}"
+                                                style="width: auto; float: right; margin-right: 10px" value="Submeter"/>
+                                </f:facet>
+                            </p:panelGrid>
+                            <br/>
+                        </div>
+                    </p:card>
+                </div>
+            </div>
+        </div>
+        <div class="card text-secondary">
+            <p:ajaxStatus onstart="PF('statusDialog').show()"
+                          oncomplete="PF('statusDialog').hide()"
+                          onsuccess="PF('statusDialog').hide()"/>
+            <p:dialog widgetVar="statusDialog"
+                      modal="true"
+                      styleClass="loading"
+                      draggable="false"
+                      closable="false"
+                      resizable="false"
+                      showHeader="false">
+                <div>
+                    <h:graphicImage style="margin-top: 20px !important;"
+                                    width="40"
+                                    height="40"
+                                    library="images"
+                                    name="loading.gif"/>
+                </div>
+            </p:dialog>
+        </div>
+    </h:form>
+</h:body>
+</html>

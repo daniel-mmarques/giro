@@ -1,0 +1,425 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	background-color: #ffffff;
+	font-family: 'Montserrat' !important;
+	overflow-y:scroll;
+}
+
+a {
+	text-decoration: none;
+	background-color: transparent;
+}
+
+a:active, a:hover {
+	outline: 0;
+}
+
+.impic-instrucao {
+	color: #1D3352 !important;
+}
+
+.impic-menu-sistema {
+	border: 0px !important;
+	padding: 0px !important;
+	padding-top: 10px !important;
+	background: none !important;
+}
+
+.impic-menu-sistema .ui-icon-triangle-1-s {
+	display: none !important;
+}
+
+.impic-menu-sistema .ui-menuitem-text {
+	color: #FAFAFA !important;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.1rem;
+}
+
+.impic-menu-sistema .sub-menu-item .ui-menuitem-text {
+	color: #006398 !important;
+	font-size: 0.8rem !important;
+}
+
+.impic-menu-sistema .ui-menuitem-active {
+	background: none !important;
+}
+
+.impic-menu-sistema .ui-state-hover {
+	background: none !important;
+}
+
+.impic-step .ui-steps-number {
+	background: #FFFFFF !important;
+	color: #006398 !important;
+	border: 1px solid #06679C !important;
+}
+
+.impic-step .ui-state-highlight .ui-steps-number {
+	background: #006398 !important;
+	color: #FFFFFF !important;
+}
+
+.impic-button-refresh.ui-button {
+	margin-left: 10px !important;
+	background: #DBE9F6 !important;
+	color: #006398 !important;
+	border: 1px solid #DBE9F6 !important;
+}
+
+.impic-p-home p {
+	color:#06679C;
+	font-size: 1.1em;
+	margin-left: 20px;
+}
+
+.impic-message-form-input {
+	margin-top: 5px !important;
+	font-size: 0.7em !important;
+	margin-left: 0 !important;
+	margin-top: 2px !important;
+	padding-top: 2px !important;
+	padding-left: 0 !important;
+	padding-bottom: 2px !important;
+}
+
+.impic-message-form-input-display-none {
+	display: none;
+}
+
+span.badge {
+	min-width: 1rem;
+	padding: 0 5px;
+	margin-left: 14px;
+	text-align: center;
+	font-size: 0.7rem;
+	line-height: 15px;
+	height: 22px;
+	color: #757575;
+	float: right;
+	box-sizing: border-box
+}
+
+span.badge.new {
+	font-weight: 300;
+	font-size: 0.8rem;
+	color: #fff;
+	background-color: #26a69a;
+	border-radius: 2px
+}
+
+span.badge.new:after {
+	content: " new"
+}
+
+span.badge[data-badge-caption]::after {
+	content: " " attr(data-badge-caption)
+}
+
+nav ul a span.badge {
+	display: inline-block;
+	float: none;
+	margin-left: 4px;
+	line-height: 22px;
+	height: 22px
+}
+
+.collection-item span.badge {
+	margin-top: calc(.75rem - 11px)
+}
+
+.collapsible span.badge {
+	margin-top: calc(1.5rem - 11px)
+}
+
+.side-nav span.badge {
+	margin-top: calc(24px - 11px)
+}
+
+nav {
+	color: #fff;
+	background-color: #006398;
+	width: 100%;
+	height: 56px;
+	line-height: 56px;
+}
+
+nav.nav-extended {
+	height: auto
+}
+
+nav.nav-extended .nav-wrapper {
+	min-height: 56px;
+	height: auto
+}
+
+nav.nav-extended .nav-content {
+	position: relative;
+	line-height: normal
+}
+
+nav a {
+	color: #000
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+	display: block;
+	font-size: 24px;
+	height: 56px;
+	line-height: 56px
+}
+
+nav .nav-wrapper {
+	position: relative;
+	height: 100%;
+	padding: 0 30px;
+}
+
+.section-content {
+	padding: 0 15px;
+}
+
+.tituloPagina {
+	color: #1D3352;
+	font-size: 1.75rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 34px;
+	letter-spacing: 0em;
+	text-align: left;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+	margin-left: 15px;
+}
+
+.navegacao {
+	float: right;
+	margin-right: 10px;
+}
+
+.impic-tit-sublinhado {
+	border-bottom: 2px solid;
+	display: inline-block;
+	padding-bottom: 2px;
+}
+
+.impic-tit-sublinhado-font {
+	font-size: 1.2em !important;
+	font-weight: 600 !important;
+	color: #1D3352;
+}
+
+.impic-title-instrucoes-separation {
+	margin-bottom: 25px;
+	margin-top: 25px !important;
+}
+
+.impic-header-title-separation {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 20px;
+}
+
+.ui-outputlabel-rfi {
+	float: left;
+}
+
+.impic-header-title-separation-login {
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+.impic-ver-instrucoes-separation {
+	margin-right: 10px !important;
+	margin-left: 20px !important;
+} 
+
+.usuario {
+	color: #FAFAFA;
+	font-size: 1.2em;
+	margin-left: 7px;
+}
+
+.user-entidade {
+	position: absolute;
+	color: #FAFAFA;
+	font-size: 1.2em;
+	margin-left: 10px;
+	margin-top: 3px;
+}
+
+.imob {
+	color: #ccc;
+	font-size: 1.0em;
+}
+
+.logomarca {
+	background: #ffffff;
+	background-repeat: no-repeat;
+}
+
+.tituloTelaMobile {
+	display: none;
+}
+
+.div-bell {
+	float: right;
+}
+
+.notification i {
+	font-size: 32px;
+	color: #fff;
+	position: relative;
+}
+
+.notification .badge {
+	right: 25px;
+	position: absolute;
+	top: 9px;
+	background-color: #ffffff;
+	height: 15px;
+	width: 5px !important;
+	border-radius: 101px;
+	display: grid;
+	place-items: center;
+	border-radius: 101px;
+	display: grid;
+	place-items: center;
+	color: #1D3352;
+}
+
+.menuMobile {
+	display: none;
+}
+
+.container-login {
+	width: 100vw;
+	height: 50vh;
+	min-height: 50vh;
+	background: #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.box-login {
+	width: 500px;
+	height: 420px;
+	background: #F7F8F9;
+}
+
+@media only screen and (min-width: 601px) {
+	nav.nav-extended .nav-wrapper {
+		min-height: 64px
+	}
+	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i
+		{
+		height: 64px;
+		line-height: 64px;
+	}
+	nav a.button-collapse {
+		display: none
+	}
+	nav .button-collapse {
+		display: none
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	nav .brand-logo {
+		position: absolute;
+		color: #fff;
+		display: inline-block;
+		font-size: 2.1rem;
+		padding: 0;
+		white-space: nowrap
+	}
+	nav .brand-logo.center {
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%)
+	}
+	nav .button-collapse i {
+		height: 56px;
+		line-height: 56px
+	}
+	.menuMobile {
+		float: left;
+		position: relative;
+		z-index: 1;
+		height: 56px;
+		margin: 0 18px
+	}
+	nav .button-collapse {
+		float: left;
+		position: relative;
+		z-index: 1;
+		height: 56px;
+		margin: 0 18px
+	}
+	.navegacao {
+		display: none;
+	}
+	.user-entidade {
+		position: absolute;
+		color: #FAFAFA;
+		font-size: 0.9em;
+		margin-left: 4px;
+		width: 12px;
+		margin-top: 1px;
+	}
+	.div-bell {
+		width: 23px;
+	}
+	.telaMobile {
+		display: none;
+	}
+	.tituloTelaMobile {
+		display: inline;
+	}
+	.formatacaoMenuMobile {
+		color: #006398;
+		font-size: 1em;
+		font-weight: bold !important;
+	}
+	.tituloPagina {
+		color: #1D3352;
+		font-size: 1em;
+	}
+	.notification .badge {
+		right: 25px;
+	position: absolute;
+	top: 9px;
+	background-color: #ffffff;
+	height: 15px;
+	width: 5px !important;
+	border-radius: 101px;
+	display: grid;
+	place-items: center;
+	border-radius: 101px;
+	display: grid;
+	place-items: center;
+	color: #1D3352;
+	}
+	.budgecard {
+		height: 40px;
+		width: 40px;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		position: relative;
+		border-radius: 10px;
+		top: 10px;
+		left: -32px;
+	}
+	.notification i {
+		font-size: 22px;
+		color: #fff;
+		position: relative;
+	}
+ 
+}
